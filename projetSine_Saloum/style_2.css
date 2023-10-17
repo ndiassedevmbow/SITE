@@ -1,0 +1,204 @@
+/* AUTEUR NDIASSE MBOW */
+
+/* CSS GENERAL */
+body {
+	overflow-x: hidden; /* Tout ce qui deborde de facons horizontal cache le*/
+	font: italic bold 15px/50px courier Lucida Calligraphy, verdana, sans-serif;  /* Tout les elements par defaut */
+  box-sizing: border-box; /* Respect des dimensions */
+}
+/* TOUT LE CONTENU */
+#container {
+  /* background-image: linear-gradient(to right, white, black, white); */
+}
+/* Tout les h1 par defaut */
+h1{
+  letter-spacing: 25px; /* Espacement entre lettre */
+  text-shadow: 5px 5px 15px #000; /* text avec ombre */
+  text-align: center;
+  color: #000;
+  font: italic bold small-caps 75px/50px  Lucida Calligraphy, verdana, sans-serif; /* font racourci */
+}
+/* FIN CSS GENERAL */
+
+
+
+/* MENU FIXE GAUCHE */
+#menu_gauche_fixe {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("images/ile.jpg");/* ARRIERE PLAN */
+  margin-top: -10px; /* SUPPRESSION DE L'ESPACE EN HAUT DU MENU ET EN BAS DE LA PAGE */
+  z-index: 1000; /* PRIORITE MENU */
+  position: fixed;/* FIXE */
+  left: 250px;/* AVEC LE POTIONNEMENT FIXE ON VEUT UN DECLAGE DE 250PX A GAUCHE */ 
+  height: 100%; /* TOUTE LA LONGEUR */
+  margin-left: -250px;/* LE DECLAGE DE 250 A GAUCHE A ETE SUPPRIMER ET LE POSITIONNEMENT FIXE MARCHE A MERVEILLE */
+  overflow: auto; /* NOUS LAISSONS AU NIVIGATEUR LE SOIN DE CHOISIR QUOI FAIRE DU DEBOREDEMENT */
+  /* TANSITION AVEC LES PREFIXES VENDEURS ET LE PAR DEFAUT */ 
+  -webkit-transition: all 0.5s ease; 
+  -moz-transition: all 0.5s ease; 
+  -o-transition: all 0.5s ease; 
+  transition: all 0.5s ease; /* TANSITION PAR DEFAUT */
+  width: 0;/* MENU CACHE POUR L'INSTANT */
+}
+#menu_gauche_fixe h1 {
+	color: #fff; 
+  letter-spacing: normal; /* POUR ANNULER L'ESPACEMENT DES TITRES QU'ON A DEFINI PAR DEFAUT EN HAUT */
+	font-size: 35px;
+}
+
+
+
+/* NAVIGATION AVEC DES LIENS EN SIGNET */
+.nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+}
+.nav li a {
+  padding-left: 70px;
+  line-height: 20px;
+  text-decoration: none;
+  color: #999999;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+}
+.nav li a:hover {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.nav li:hover a {
+  color: #fff;
+}
+.nav li a:active,
+.nav li a:focus {
+  color: blue;
+}
+.nav > .espace {
+  margin-top: 140px;
+}
+/* NAVIGATION AVEC DES LIENS EN SIGNET */
+
+/* FIN MENU FIXE GAUCHE */
+
+
+
+/* PAGE CONTENUE */
+#site {
+  width: 100%; /* OCCUPE TOUTA LA PAGE MAIS ET LE MENU FIXE AVEC UNE LARGEUR 0(INVISIBLE MAIS EXISTANT) ET PRIORITAIRE */
+  position: static;
+  padding: 15px;
+}
+#site hr { /* LIGNE SEPARATRICE */
+	border-top: 10px inset #dfdfdf; 
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+
+
+/* PAGE A-PROPOS */
+.a-propos{
+  background: repeating-radial-gradient(farthest-side ellipse at center, white, white, white, white, black 140%);
+  width: 80%; 
+  margin: 10px auto;
+  padding: 50px;
+}
+.a-propos p{
+  line-height: 75px;  
+}
+.a-propos p span{
+  background-color: black;
+  color: white;
+  text-align: justify;  
+}
+/* FIN PAGE A-PROPOS */
+
+
+
+/* PAGE CONTACT */
+.contact{
+  font: italic bold xx-large/15px small-caps papyrus;
+  background-image: url("images/connexion.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 55px;
+  border: 15px double black;
+  padding: 40px;
+  width: 80%;
+  margin: auto;
+}
+label{
+  letter-spacing: 15px;
+  border-radius: 40px;
+}
+.champForm  {
+  width: 90%;
+  padding: 12px 20px;
+  margin-bottom: 70px;
+  display: inline-block;
+  border: 15px solid #ccc;
+  cursor: pointer;
+  background-color: white;
+}
+.champForm[type=submit] {
+  width: 100%;
+  background-color: black;
+  color: pink;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 40px;
+}
+/* FIN PAGE CONTACT */
+
+
+
+/* PAGE PRESENTATION */
+.presentation{
+  background: repeating-radial-gradient(farthest-side ellipse at center, white, white, white, white, black 140%);
+  width: 80%;
+  margin: 10px auto;
+  padding: 50px;
+}
+.presentation p{
+  line-height: 75px;  
+}
+.presentation p span{
+  background-color: black;
+  color: white;
+  text-align: justify;  
+}
+/* FIN PAGE PRESENTATION */
+
+/* FIN PAGE CONTENUE */
+
+
+
+/* RESPONSIF DESIGN */
+@media(min-width:768px) {/* de 768 a 1000px */
+    #container { /* Le conteneur diminu de 250px */
+        padding-left: 250px;
+    }
+    #menu_gauche_fixe {
+        width: 250px; /* Et la largeur du menu passe de 0 a 250px*/
+    }
+    #site {
+        padding: 20px;
+    }
+}
+
+@media(max-width:769px) {/* de 768 voir moins */
+    #container { /* Le conteneur diminu de 250px */
+        padding-left: 160px;
+    }
+    #menu_gauche_fixe {
+        width: 160px; /* Et la largeur du menu passe de 0 a 250px*/
+    }
+    .nav li a {
+      padding-left: 20px;
+    }
+}
+/* RESPONSIF DESIGN */
+
